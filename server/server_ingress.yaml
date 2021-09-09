@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: todo-backend-ingress
+spec:
+  rules:
+    - host: taicanglimi.cn
+      http:
+        paths:
+          - path: /api
+            backend:
+              serviceName: todo-backend-service
+              servicePort: 8081
+          - path: /account
+            backend:
+              serviceName: todo-backend-service
+              servicePort: 80
